@@ -1,0 +1,678 @@
+/* VARIABLES */
+:root {
+  --black: #151515;
+  --charcoal_grey: #242424;
+  --parrot_green: #4ee1a0;
+  --milky_grey: #d9d9d9;
+  --white: #ffffff;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* BASE STYLES */
+body {
+  overflow-x: hidden;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+}
+.footer {
+  background-color: var(--charcoal_grey);
+}
+.bio-data-container__contact-me-text:hover,
+.projects-section__contact-me-text:hover,
+.projects-card-container__contact-me-text:hover,
+.contact-form__submit-button:hover {
+  color: var(--parrot_green);
+  cursor: pointer;
+}
+.projects-card-container__projects-card-image:hover::before {
+  opacity: 1;
+}
+.projects-section__projects-card-container:hover
+  .projects-card-container__projects-card-image {
+  filter: brightness(50%); /* Darken the image on hover */
+}
+.error {
+  color: var(--red);
+  font-size: 0.8em;
+  margin-top: 0.125em;
+  padding: 0.25em;
+  display: block;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/fonts/static/SpaceGrotesk-Bold.ttf") format("truetype");
+  src: url("./assets/fonts/static/SpaceGrotesk-Medium.ttf") format("truetype");
+  src: url("./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
+    format("truetype");
+}
+.socials-container__name-heading {
+  font-size: 1.25rem;
+}
+.bio-data-container__name-heading {
+  font-size: 1.85rem;
+}
+.bio-data-container__bio-text,
+.footer__contact-text {
+  font-size: 0.85rem;
+  color: var(--milky_grey);
+}
+.bio-data-container__contact-me-text,
+.projects-section__contact-me-text,
+.projects-card-container__contact-me-text,
+.contact-form__submit-button {
+  border: none;
+  font-size: 1.025rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--milky_grey);
+  border-bottom: 2px solid var(--parrot_green);
+  padding-bottom: 0.2rem;
+}
+.experience-section__div__heading,
+.projects-section__heading {
+  font-size: 1.5rem;
+}
+.experience-section__div__text,
+.contact-form__submit-button {
+  font-size: 0.8rem;
+  color: var(--milky_grey);
+}
+.projects-card-container__heading {
+  font-size: 1.3rem;
+}
+.projects-card-container__text {
+  font-size: 1rem;
+  color: var(--milky_grey);
+}
+.footer__contact-heading {
+  font-size: 1.4rem;
+}
+
+/* MOBILE STYLES */
+/* MOBILE STYLES */
+/* ---header--- */
+.header {
+  position: relative;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--milky_grey);
+  padding-bottom: 4rem;
+  margin: 0 0.5rem;
+}
+
+.header__bio-data-container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  height: 50%;
+}
+
+.bio-data-container__socials-container {
+  margin: 1rem 0 0;
+}
+
+.socials-container__name-heading {
+  font-size: 1.25rem;
+}
+
+.icon {
+  width: 10%;
+  margin: 0.5rem 0.5rem 0;
+}
+.icon:hover {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(5000%)
+    hue-rotate(90deg) brightness(100%) contrast(97%);
+  /* Filter to simulate parrot green (#4ee1a0) */
+}
+
+.profile-picture {
+  width: 100%;
+  display: block;
+  background-image: linear-gradient(
+    to top,
+    rgba(36, 36, 36, 0.2),
+    rgba(32, 32, 32, 0.2),
+    rgba(28, 28, 28, 0.2),
+    rgba(25, 25, 25, 0.2),
+    rgba(21, 21, 21, 0.2)
+  );
+}
+
+.header__pattern-rings,
+.header__pattern-circle {
+  position: absolute;
+  top: 0;
+}
+
+.header__pattern-rings {
+  left: -25rem;
+  top: 11rem;
+  z-index: -1;
+}
+
+.header__pattern-circle {
+  right: -24%;
+  top: 41%;
+  z-index: -1;
+}
+
+.bio-data-container__name-heading {
+  font-size: 1.85rem;
+}
+
+.bio-data-container__name-heading,
+.bio-data-container__bio-text,
+.bio-data-container__contact-me-text {
+  margin: 1rem 0;
+}
+
+.bio-data-container__name {
+  border-bottom: 3px solid var(--parrot_green);
+}
+
+.bio-data-container__bio-text,
+.footer__contact-text {
+  font-size: 0.85rem;
+  color: var(--milky_grey);
+}
+
+.bio-data-container__contact-me-text,
+.projects-section__contact-me-text,
+.projects-card-container__contact-me-text,
+.contact-form__submit-button {
+  border: none;
+  font-size: 1.025rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--milky_grey);
+  border-bottom: 2px solid var(--parrot_green);
+  padding-bottom: 0.2rem;
+}
+
+/* ---main--- */
+/* experience section */
+.main__experience-section {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  margin: 0 0.5rem;
+  border-bottom: 1px solid var(--milky_grey);
+  position: relative;
+}
+
+.experience-section__div {
+  margin: 2rem 0;
+}
+
+.experience-section__div__heading,
+.projects-section__heading {
+  font-size: 1.5rem;
+}
+
+.experience-section__div__heading {
+  margin-bottom: 0.5rem;
+}
+
+.experience-section__div__text,
+.contact-form__submit-button {
+  font-size: 0.8rem;
+  color: var(--milky_grey);
+}
+
+.experience-section__pattern-rings {
+  position: absolute;
+  bottom: -10.5%;
+}
+
+/* projects section */
+.main__projects-section {
+  padding: 4rem 0.5rem 2rem;
+  margin: 0 0.5rem;
+}
+
+.projects-section__heading-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projects-section__projects-card-container {
+  margin: 3rem 0;
+}
+
+.projects-card-container__projects-card-image {
+  width: 100%;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.projects-card-container__projects-card-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.project-card-container-hovered {
+  position: relative;
+}
+
+.card-container-when-hovered {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-70%, -50%);
+  text-align: center;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.projects-section__projects-card-container:hover
+  .projects-card-container__view-project-and-code-div {
+  display: none;
+}
+
+.projects-section__projects-card-container:hover .card-container-when-hovered {
+  display: block;
+}
+
+.projects-section__projects-card-container:hover
+  .projects-card-container__contact-me-text {
+  margin-top: 1rem;
+}
+
+.projects-card-container__heading {
+  font-size: 1.3rem;
+}
+
+.projects-card-container__text {
+  font-size: 1rem;
+  color: var(--milky_grey);
+}
+
+.projects-card-container__text,
+.projects-card-container__contact-me-text {
+  margin-right: 1rem;
+}
+
+.projects-card-container__heading,
+.projects-card-container__tech-stack,
+.projects-card-container__view-project-and-code-div {
+  margin: 1rem 0;
+}
+
+/* ---footer--- */
+.footer {
+  background-color: var(--charcoal_grey);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.footer__contact {
+  text-align: center;
+}
+
+.footer__contact-heading {
+  font-size: 1.4rem;
+}
+
+.footer__contact-text {
+  margin: 1rem 0;
+}
+
+.footer__contact-form {
+  text-align: left;
+  margin: 2rem 0 0;
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+input,
+textarea {
+  color: var(--milky_grey);
+}
+
+.contact-form__input-div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.contact-form__label {
+  color: var(--milky_grey);
+}
+
+.contact-form__input {
+  padding: 0.5rem;
+  background-color: var(--charcoal_grey);
+  border: none;
+  border-bottom: 1px solid var(--milky_grey);
+}
+
+.contact-form__submit-button {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: var(--charcoal_grey);
+}
+
+.footer__pattern-rings {
+  position: absolute;
+  left: -23rem;
+  bottom: 3rem;
+}
+
+.footer__socials-container {
+  border-top: 1px solid var(--milky_grey);
+}
+
+.footer__socials-container {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+/* --- MEDIA QUERIES --- */
+/* 375px and more */
+@media (min-width: 375px) {
+  .header,
+  .main,
+  .footer {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .bio-data-container__name-heading {
+    font-size: 2.2rem;
+    margin: 2rem 0 1.25rem;
+  }
+
+  .bio-data-container__bio-text,
+  .footer__contact-text {
+    font-size: 0.95rem;
+    color: var(--milky_grey);
+  }
+
+  .bio-data-container__contact-me-text,
+  .projects-section__contact-me-text,
+  .projects-card-container__contact-me-text,
+  .contact-form__submit-button {
+    font-size: 1.05rem;
+  }
+
+  .header__pattern-rings {
+    left: -24rem;
+    top: 12rem;
+  }
+
+  .header__pattern-circle {
+    top: 40%;
+    right: -20%;
+  }
+
+  .bio-data-container__bio-text,
+  .footer__contact-text {
+    font-size: 0.9rem;
+  }
+
+  .footer__contact-heading {
+    font-size: 1.5rem;
+  }
+
+  .footer__pattern-rings {
+    left: -25rem;
+  }
+}
+
+/* 768px and more */
+@media (min-width: 768px) {
+  .header,
+  .main,
+  .footer {
+    max-width: 100%;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    margin: 1rem;
+  }
+
+  .header__bio-data-container {
+    width: 30%;
+    margin-right: 0;
+  }
+
+  .bio-data-text-container {
+    width: 70%;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+
+  .bio-data-container__name-heading {
+    font-size: 3.5rem;
+    margin-top: 15rem;
+  }
+
+  .bio-data-container__bio-text {
+    margin: 2rem 11rem 2rem 0;
+  }
+
+  .socials-container__name-heading {
+    position: absolute;
+    left: 0;
+  }
+
+  .icon {
+    width: 7%;
+  }
+
+  .header__pattern-rings {
+    left: -24rem;
+    top: 8rem;
+  }
+
+  .header__pattern-circle {
+    top: 69%;
+    right: -7%;
+    z-index: 1;
+  }
+
+  .main__experience-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  .experience-section__pattern-rings {
+    bottom: -14.5%;
+    right: -49%;
+  }
+
+  .project-section__projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  .projects-section__projects-card-container {
+    margin: 0;
+  }
+
+  .projects-section__heading-div {
+    margin-bottom: 2rem;
+  }
+
+  .footer {
+    text-align: right;
+  }
+
+  .footer__contact {
+    max-width: 425px;
+    margin: 0 auto;
+  }
+
+  .footer__pattern-rings {
+    left: -34rem;
+  }
+
+  .footer__socials-container {
+    width: 100%;
+    display: block;
+    padding-top: 2rem;
+  }
+
+  .footer__socials-container .icon {
+    width: 3%;
+  }
+
+  .footer__socials-container .socials-container__name-heading {
+    left: 3%;
+  }
+}
+
+/* 1024px and more */
+@media (min-width: 1024px) {
+  .header,
+  .main,
+  .footer {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .header__pattern-circle {
+    top: 73%;
+    right: -7%;
+  }
+
+  .bio-data-container__bio-text {
+    margin-right: 17rem;
+  }
+
+  .footer {
+    margin-top: 2.5rem;
+  }
+
+  .footer__contact {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .footer__contact-form,
+  .footer__contact-div {
+    width: 45%;
+    margin-top: 0;
+  }
+
+  .footer__contact-heading {
+    margin-top: 0.75rem;
+  }
+
+  .footer__pattern-rings {
+    left: -52rem;
+  }
+
+  .footer__socials-container .socials-container__name-heading {
+    left: 8%;
+  }
+}
+
+/* 1440px and more */
+@media (min-width: 1440px) {
+  .header,
+  .main,
+  .footer,
+  .footer__socials-container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .bio-data-container__name-heading {
+    margin-top: 15rem;
+  }
+
+  .bio-data-container__bio-text {
+    margin: 3rem 23rem 3rem 0;
+    line-height: 1.5;
+  }
+
+  .header__pattern-circle {
+    top: 67%;
+    right: 24%;
+    z-index: 1;
+  }
+
+  .experience-section__div__heading,
+  .projects-section__heading {
+    font-size: 2.5rem;
+  }
+
+  .main__experience-section {
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: left;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .experience-section__pattern-rings {
+    right: -46%;
+  }
+
+  .main__projects-section {
+    padding: 6rem 0.5rem 6rem;
+  }
+
+  .footer {
+    max-width: 100%;
+  }
+
+  .footer__socials-container .socials-container__name-heading {
+    left: 17%;
+  }
+
+  .footer__socials-container .icon {
+    width: 2%;
+  }
+
+  .footer__pattern-rings {
+    left: -65rem;
+  }
+
+  .footer__contact-heading {
+    font-size: 2.5rem;
+  }
+
+  .footer__contact-text {
+    line-height: 1.5;
+  }
+}
